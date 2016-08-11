@@ -8,9 +8,10 @@
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
-    <script src="{{ site.baseurl }}/_js/moment-with-locales.js"></script>
-    <script src="/_js/moment-hijri-min.js"></script>
+
+    <script src="{{ site.baseurl }}/js/moment-with-locales.js"></script>
+    <script src="{{ site.baseurl }}/js/moment-with-locales.js"></script>
+    <script src="{{ site.baseurl }}/js/moment-hijri-min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
@@ -47,6 +48,17 @@
         </footer>
       </div>
     </div>
+
+    <script type="text/javascript">
+    $(function() {
+      moment().locale('ar-SA');
+      $('.to-hijri').each(function() {
+        var date = $( this ).attr('date');
+        $( this ).html(moment(date).format('iYYYY/iM/iDهـ الموافق YYYY/M/Dم'));
+      }
+
+    }
+    </script>
 
     {% include analytics.html %}
   </body>

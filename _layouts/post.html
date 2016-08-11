@@ -10,7 +10,7 @@ layout: default
   </div>
 
   <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+    Written on <span class="to-hijri" date='{{ page.date | date_to_xmlschema }}'></span>
   </div>
 
   {% include disqus.html %}
